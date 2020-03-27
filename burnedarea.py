@@ -36,6 +36,7 @@ class BurnedArea():
         ndwi_mosaic_fname = self.region_dir + '/NDWI_mosaic.tif'
 
         if ~os.path.isfile(nbr_mosaic_fname) or ~os.path.isfile(ndwi_mosaic_fname):
+            print('Building mosaic...')
             self.BuildMosaic()
 
         # read mosaic and crop it to match GeoJSON
@@ -62,9 +63,9 @@ class BurnedArea():
         burned_area, total_area = self.GetBurnedArea(nbr=masked_nbr_mosaic[0],
                                                 ndwi=masked_ndwi_mosaic[0])
 
-        print('Area total cubierta: {} hectareas'.format(total_area))
-        print('Area quemada: {} hectareas'.format(burned_area))
-        print('Fraccion de area quemada: {}'.format(burned_area * 1./total_area))
+        print('Total area covered: {} ha'.format(total_area))
+        print('Burned area: {} ha'.format(burned_area))
+        print('Burned fraction: {}'.format(burned_area * 1./total_area))
 
     def BuildMosaic(self):
         '''
