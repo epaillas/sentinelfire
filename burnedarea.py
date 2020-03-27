@@ -37,6 +37,8 @@ class BurnedArea():
         print('geojson: {}'.format(self.geojson))
         print('nbr_threshold: {}'.format(self.nbr_threshold))
         print('ndwi_threshold: {}'.format(self.ndwi_threshold))
+        print('nbr_mosaic: {}'.format(nbr_mosaic_fname))
+        print('ndwi_mosaic: {}'.format(ndwi_mosaic_fname))
 
         df = gpd.read_file(self.geojson)
         self.polygon = df['geometry'][0]
