@@ -44,10 +44,8 @@ class BurnedArea():
         self.polygon = df['geometry'][0]
 
         # check if mosaic exists, create otherwise
-        nbr_mosaic_fname = self.region_dir + '/NBR_mosaic.tif'
-        ndwi_mosaic_fname = self.region_dir + '/NDWI_mosaic.tif'
 
-        if ~os.path.isfile(nbr_mosaic_fname) or ~os.path.isfile(ndwi_mosaic_fname):
+        if not os.path.isfile(nbr_mosaic_fname) or  not os.path.isfile(ndwi_mosaic_fname):
             print('Building mosaic...')
             self.BuildMosaic()
 
