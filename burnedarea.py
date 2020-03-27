@@ -30,13 +30,13 @@ class BurnedArea():
 
         print('Finding burned area for the following parameters:')
         print('region: {}'.format(self.region))
-        print('date: {}'.format(date))
-        print('work_dir: {}'.format(work_dir))
-        print('date_dir: {}'.format(date_dir))
-        print('region_dir: {}'.format(region_dir))
-        print('geojson: {}'.format(geojson))
-        print('nbr_threshold: {}'.format(nbr_threshold))
-        print('ndwi_threshold: {}'.format(ndwi_threshold))
+        print('date: {}'.format(self.date))
+        print('work_dir: {}'.format(self.work_dir))
+        print('date_dir: {}'.format(self.date_dir))
+        print('region_dir: {}'.format(self.region_dir))
+        print('geojson: {}'.format(self.geojson))
+        print('nbr_threshold: {}'.format(self.nbr_threshold))
+        print('ndwi_threshold: {}'.format(self.ndwi_threshold))
 
         df = gpd.read_file(self.geojson)
         self.polygon = df['geometry'][0]
