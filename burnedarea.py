@@ -28,6 +28,16 @@ class BurnedArea():
         nbr_mosaic_fname = self.region_dir + '/NBR_mosaic.tif'
         ndwi_mosaic_fname = self.region_dir + '/NDWI_mosaic.tif'
 
+        print('Finding burned area for the following parameters:')
+        print('region: {}'.format(self.region))
+        print('date: {}'.format(date))
+        print('work_dir: {}'.format(work_dir))
+        print('date_dir: {}'.format(date_dir))
+        print('region_dir: {}'.format(region_dir))
+        print('geojson: {}'.format(geojson))
+        print('nbr_threshold: {}'.format(nbr_threshold))
+        print('ndwi_threshold: {}'.format(ndwi_threshold))
+
         df = gpd.read_file(self.geojson)
         self.polygon = df['geometry'][0]
 
